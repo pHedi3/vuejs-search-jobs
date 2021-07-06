@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+        .job {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="app">
+            <div v-for="(job, index) in jobs" class="job">
+                <div class="important">
+                    {{job.position}} alla {{job.company}}
+                </div>
+                <div class="description">
+                    {{job.description}}
+                </div>
+                <div class="less-important">
+                    {{job.city}}
+                    {{job.contract}}
+                    {{job.created_at}}
+                </div>
+                <div v-if="starred.includes(job.id)" @click="notFavorite(job.id)">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div v-else @click="favorite(job.id)">
+                    <i class="far fa-heart"></i>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
