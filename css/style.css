@@ -34,6 +34,7 @@
     display: inline-block;
     margin-right: 12px;
     font-size: 24px;
+    cursor: pointer;
 }
 
 .applyed {
