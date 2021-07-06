@@ -15,9 +15,38 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div id="app" class="col-6">
+    <div id="app" class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="favorite">
+                    <h1>MY FAVORITE</h1>
+                    <div v-for="(job, index) in jobs" class="job" v-if="starred.includes(job.id)">
+                        <div class="important">
+                            {{job.position}} to {{job.company}}
+                        </div>
+                        <div class="less-important">
+                            {{job.city}}
+                            {{job.contract}}
+                            {{job.created_at}}
+                        </div>
+                    </div>
+                </div>
+                <div class="apply-area">
+                    <h1>MY APPLY </h1>
+                    <div v-for="(job, index) in jobs" class="job" v-if="applied.includes(job.id)">
+                        <div class="important">
+                            {{job.position}} to {{job.company}}
+                        </div>
+                        <div class="less-important">
+                            {{job.city}}
+                            {{job.contract}}
+                            {{job.created_at}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-8 jobs-area">
+                <h1>ALL JOBS</h1>
                 <div v-for="(job, index) in jobs" class="job">
                     <div class="important">
                         {{job.position}} to {{job.company}}
@@ -37,7 +66,6 @@
                         <div class="heart" v-else @click="favorite(starred, job.id)">
                             <i class="far fa-heart"></i>
                         </div>
-
                         <div class="applyed" v-if="applied.includes(job.id)">
                             APPLYED
                         </div>
@@ -46,10 +74,10 @@
                         </div>
                     </div>
                 </div>
-                <div v-show="done" class="check">
-                    APPLY DONE
-                </div>
             </div>
+        </div>
+        <div v-show="done" class="check">
+            APPLY DONE
         </div>
     </div>
 

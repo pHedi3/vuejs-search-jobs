@@ -64,8 +64,10 @@ var app = new Vue({
             array.push(id)
         },
         notFavorite: function (array, id) {
-            let index = array.indexOf(id)
-            array.splice(index, 1)
+            if (array.includes(id)) {
+                let index = array.indexOf(id)
+                array.splice(index, 1)
+            }
         },
         applyed: function (array, id) {
             array.push(id)

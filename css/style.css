@@ -4,6 +4,49 @@
     border-bottom: 2px solid rgb(151, 151, 0) ;
 }
 
+h1 {
+    font-size: 30px;
+}
+
+.favorite .job:last-of-type, .apply-area .job:last-of-type,.jobs-area .job:last-of-type {
+    border-bottom: none;
+}
+
+
+.favorite div, .apply-area div {
+    font-size: 20px;
+}
+
+.favorite {
+    background-color: #ddd;
+    padding: 12px;
+    border-radius: 24px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    height: calc(50vh - 24px );
+    overflow-y: scroll;
+}
+
+.apply-area {
+    background-color: #ddd;
+    padding: 12px;
+    border-radius: 24px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    height: calc(50vh - 24px );
+    overflow-y: scroll;
+}
+
+.jobs-area {
+    background-color: #ddd;
+    padding: 12px;
+    border-radius: 24px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    height: calc(100vh - 24px );
+    overflow-y: scroll;
+}
+
 .check {
     background-color: rgb(151, 151, 0);
     color: white;
@@ -18,11 +61,14 @@
 .important {
     text-align: center;
     font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 12px;
 }
 
 .less-important {
     text-align: right;
     color: #666;
+    margin-bottom: 12px;
 }
 
 .action {
