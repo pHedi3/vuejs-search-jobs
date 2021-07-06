@@ -55,7 +55,7 @@ var app = new Vue({
 
         ],
         starred: [1, 3],
-        applied: [4, 5],
+        applied: [2, 4],
         done: false
 
     },

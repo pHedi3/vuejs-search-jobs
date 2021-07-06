@@ -10,52 +10,45 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <style>
-        .job {
-            margin-bottom: 20px;
-        }
+    <link rel="stylesheet" href="./css/style.css">
 
-        .check {
-            background-color: black;
-            color: white;
-            position: absolute;
-            top: 20px;
-            left: 50%;
-        }
-    </style>
 </head>
 
 <body>
     <div class="container">
-        <div id="app">
-            <div v-for="(job, index) in jobs" class="job">
-                <div class="important">
-                    {{job.position}} alla {{job.company}}
-                </div>
-                <div class="description">
-                    {{job.description}}
-                </div>
-                <div class="less-important">
-                    {{job.city}}
-                    {{job.contract}}
-                    {{job.created_at}}
-                </div>
-                <div v-if="starred.includes(job.id)" @click="notFavorite(starred, job.id)">
-                    <i class="fas fa-heart"></i>
-                </div>
-                <div v-else @click="favorite(starred, job.id)">
-                    <i class="far fa-heart"></i>
-                </div>
+        <div class="row justify-content-center">
+            <div id="app" class="col-6">
+                <div v-for="(job, index) in jobs" class="job">
+                    <div class="important">
+                        {{job.position}} alla {{job.company}}
+                    </div>
+                    <div class="description">
+                        {{job.description}}
+                    </div>
+                    <div class="less-important">
+                        {{job.city}}
+                        {{job.contract}}
+                        {{job.created_at}}
+                    </div>
+                    <div class="action">
+                        <div class="heart" v-if="starred.includes(job.id)" @click="notFavorite(starred, job.id)">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="heart" v-else @click="favorite(starred, job.id)">
+                            <i class="far fa-heart"></i>
+                        </div>
 
-                <div v-if="applied.includes(job.id)">
-                    JUST APPLY
+                        <div class="applyed" v-if="applied.includes(job.id)">
+                            JUST APPLY
+                        </div>
+                        <div class="apply" v-else @click="applyed(applied, job.id)">
+                            <button>APPLY</button>
+                        </div>
+                    </div>
                 </div>
-                <div v-else @click="applyed(applied, job.id)">
-                    <button>APPLY</button>
+                <div v-show="done" class="check">
+                    APPLY DONE
                 </div>
-            </div>
-            <div v-show="done" class="check">
-                APPLY DONE
             </div>
         </div>
     </div>

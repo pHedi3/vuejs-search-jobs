@@ -1,0 +1,61 @@
+.job {
+    padding-bottom: 24px;
+    padding-top: 24px;
+    border-bottom: 2px solid rgb(151, 151, 0) ;
+}
+
+.check {
+    background-color: rgb(151, 151, 0);
+    color: white;
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.important {
+    text-align: center;
+    font-weight: bold;
+}
+
+.less-important {
+    text-align: right;
+    color: #666;
+}
+
+.action {
+    text-align: center;
+}
+
+.heart {
+    color: tomato;
+    display: inline-block;
+    margin-right: 12px;
+    font-size: 24px;
+}
+
+.applyed {
+    background-color: rgb(151, 151, 107);
+    display: inline-block;
+    color: white;
+    font-size: 24px;
+    border:1px solid rgb(151, 151, 0);
+    border-radius: 12px;
+    padding: 0 12px;
+
+}
+
+.apply {
+    display: inline-block;
+    font-size: 24px;
+}
+
+.apply button {
+    background-color: rgb(151, 151, 0);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0 12px;
+}
