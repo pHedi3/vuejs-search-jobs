@@ -55,16 +55,30 @@ var app = new Vue({
 
         ],
         starred: [1, 3],
-        applied: [4, 5]
+        applied: [4, 5],
+        done: false
 
     },
     methods: {
-        favorite: function (id) {
-            this.starred.push(id)
+        favorite: function (array, id) {
+            array.push(id)
         },
-        notFavorite: function (id) {
-            let index = this.starred.indexOf(id)
-            this.starred.splice(index, 1)
+        notFavorite: function (array, id) {
+            let index = array.indexOf(id)
+            array.splice(index, 1)
+        },
+        applyed: function (array, id) {
+            array.push(id)
+            this.notFavorite(this.starred, id)
+            setTimeout(() => {
+                this.done = true
+                this.doneGo()
+            }, 1000);
+        },
+        doneGo: function () {
+            setTimeout(() => {
+                this.done = false
+            }, 1000);
         }
     }
 })

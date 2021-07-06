@@ -14,6 +14,14 @@
         .job {
             margin-bottom: 20px;
         }
+
+        .check {
+            background-color: black;
+            color: white;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+        }
     </style>
 </head>
 
@@ -32,13 +40,22 @@
                     {{job.contract}}
                     {{job.created_at}}
                 </div>
-                <div v-if="starred.includes(job.id)" @click="notFavorite(job.id)">
+                <div v-if="starred.includes(job.id)" @click="notFavorite(starred, job.id)">
                     <i class="fas fa-heart"></i>
                 </div>
-                <div v-else @click="favorite(job.id)">
+                <div v-else @click="favorite(starred, job.id)">
                     <i class="far fa-heart"></i>
                 </div>
 
+                <div v-if="applied.includes(job.id)">
+                    JUST APPLY
+                </div>
+                <div v-else @click="applyed(applied, job.id)">
+                    <button>APPLY</button>
+                </div>
+            </div>
+            <div v-show="done" class="check">
+                APPLY DONE
             </div>
         </div>
     </div>
