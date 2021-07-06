@@ -1,6 +1,6 @@
 .job {
-    padding-bottom: 24px;
-    padding-top: 24px;
+    padding-bottom: 12px;
+    padding-top: 12px;
     border-bottom: 2px solid rgb(151, 151, 0) ;
 }
 
@@ -24,7 +24,7 @@ h1 {
     margin-top: 12px;
     margin-bottom: 12px;
     height: calc(50vh - 24px );
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .apply-area {
@@ -34,7 +34,7 @@ h1 {
     margin-top: 12px;
     margin-bottom: 12px;
     height: calc(50vh - 24px );
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .jobs-area {
@@ -44,7 +44,7 @@ h1 {
     margin-top: 12px;
     margin-bottom: 12px;
     height: calc(100vh - 24px );
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .check {
